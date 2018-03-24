@@ -1,0 +1,13 @@
+import React, {Component} from 'react';
+import App from "../../components/App/App";
+
+class AppContainer extends Component {
+
+  render() {
+    return (
+      <App post={{id: 1, title: 'Lorem Ipsum', body: 'Lorem Ipsum'}}/>
+    )
+  }
+}
+
+export default AppContainer
