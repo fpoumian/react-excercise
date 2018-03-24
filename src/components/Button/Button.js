@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Button = ({onClick, primary = false, children}) => (
-  <button onClick={onClick} className={`button ${primary ? `button--primary` : ``} `}>{children}</button>
+  <button onClick={onClick} className={`btn ${primary ? `btn--primary` : `btn--default`} `}>{children}</button>
 )
 
 

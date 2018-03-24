@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './Form';
+import MainFormContainer from './MainFormContainer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Form id={1} />, div);
+  ReactDOM.render(<MainFormContainer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

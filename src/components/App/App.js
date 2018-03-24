@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Form from "../Form/Form";
+import MainForm from "../MainForm";
 
 const App = ({post: {id, title, body}}) => (
-  <div>
-    <h1>{`Heading`}</h1>
-    <Form id={1}/>
-  </div>
+  <main className={`app__wrapper`}>
+      <MainForm id={1}/>
+  </main>
 )
 
 App.propTypes = {
