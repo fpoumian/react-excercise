@@ -13,11 +13,8 @@ code {
     monospace;
 }
 
-.app {
 
-}
-
-.app__wrapper {
+.top-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +28,9 @@ code {
     font-size: 1rem;
 }
 
-/* Main Form */
+/**
+* Button
+*/
 .btn {
     border-radius: 10px;
     padding: 15px 25px;
@@ -54,7 +53,10 @@ code {
 }
 
 
-/* Main Form */
+/**
+* Main Form
+*/
+
 .main-form {
     width: auto;
 }
@@ -77,6 +79,7 @@ code {
     justify-content: center;
 }
 
+/** Laptop and Desktop */
 @media (min-width: 64em) {
     .main-form {
         width: 400px;
@@ -84,6 +87,7 @@ code {
 
     .main-form__wrapper {
         flex-direction: row;
+        height: auto;
     }
 
     .main-form__btn-wrapper {

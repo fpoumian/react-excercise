@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button'
 
-const Form = ({id}) => (
+const MainForm = ({id, onSubmit, onChange}) => (
   <section className={`main-form`}>
-    <form>
+    <form onSubmit={e => e.preventDefault() }>
       <div className={`main-form__wrapper`}>
         <label className={`main-form__label`}>{`Post ID`}</label>
-        <input className={`input`} type={`text`} value={id}/>
+        <input className={`input`} type={`number`} value={id} onChange={e => onChange(e)}/>
         <div className={`main-form__btn-wrapper`}>
-          <Button onClick={() => alert('clicked!')} primary>
+          <Button onClick={onSubmit} primary>
           {`Edit`}
         </Button>
         </div>
@@ -18,8 +18,10 @@ const Form = ({id}) => (
   </section>
 )
 
-Form.propTypes = {
-  id: PropTypes.number,
+MainForm.propTypes = {
+  id: PropTypes.string,
+  onSubmit: PropTypes.func,
+  onChange: PropTypes.func,
 }
 
-export default Form
+export default MainForm

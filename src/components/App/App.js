@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import MainForm from "../MainForm";
+import MainFormContainer from "../../containers/MainFormContainer";
 
 const App = ({post: {id, title, body}}) => (
-  <main className={`app__wrapper`}>
-      <MainForm id={1}/>
+  <main className={`top-wrapper`}>
+      <MainFormContainer id={1}/>
   </main>
 )
 
