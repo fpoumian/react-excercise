@@ -4,7 +4,12 @@ import App from '../../components/App'
 class AppContainer extends Component {
 
   state = {
-    isModalActive: true
+    isModalActive: false,
+    post: {
+      id: 1,
+      title: 'Lorem Ipsum',
+      body: 'Lorem Ipsum',
+    }
   }
 
   handleModalCancel = () => {
@@ -13,17 +18,25 @@ class AppContainer extends Component {
     })
   }
 
+  handleEditPostFormSubmit = ({title, body}) => {
+    this.setState({
+      post: {
+        ...this.state.post,
+        title,
+        body
+      },
+      isModalActive: false
+    })
+  }
+
     render() {
-    const { isModalActive } = this.state
+    const { isModalActive, post } = this.state
     return (
       <App
         isModalActive={isModalActive}
         onModalCancel={this.handleModalCancel}
-        post={{
-          id: 1,
-          title: 'Lorem Ipsum',
-          body: 'Lorem Ipsum',
-        }}
+        onEditPostFormSubmit={this.handleEditPostFormSubmit}
+        post={post}
       />
     )
   }

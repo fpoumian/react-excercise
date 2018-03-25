@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EditForm from './EditForm';
+import EditPostFormContainer from './EditPostFormContainer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<EditForm id={1} />, div);
+  ReactDOM.render(<EditPostFormContainer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

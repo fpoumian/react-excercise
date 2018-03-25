@@ -13,12 +13,18 @@ code {
     monospace;
 }
 
-
 .top-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.content-wrapper {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .input {
@@ -52,7 +58,6 @@ code {
     background: #0075b2;
 }
 
-
 /**
 * Main Form
 */
@@ -66,12 +71,17 @@ code {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 175px;
+    height: 150px;
 }
 
-.main-form__label {
-    display: flex;
-    align-items: center;
+.main-form__field {
+    display: block;
+}
+
+.main-form__field__label {
+    margin-bottom: 1rem;
+    text-align: center;
+    display: block;
 }
 
 .main-form__btn-wrapper {
@@ -90,10 +100,40 @@ code {
         height: auto;
     }
 
+    .main-form__field {
+        display: flex;
+        align-items: center;
+    }
+
     .main-form__btn-wrapper {
         display: flex;
         align-items: center;
     }
+
+    .main-form__field__label {
+        margin-right: 2rem;
+        margin-bottom: 0;
+        display: flex;
+    }
+}
+
+/**
+* Post
+*/
+
+.post {}
+
+.post__field {
+    margin-bottom: 1.5rem;
+}
+
+.post__field span {
+    display: block;
+}
+
+.post__field__label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 /**

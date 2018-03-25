@@ -2,16 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button'
 
-const MainForm = ({id, onSubmit, onChange}) => (
+const MainForm = ({ id, onSubmit, onChange }) => (
   <section className={`main-form`}>
-    <form onSubmit={e => e.preventDefault() }>
+    <form onSubmit={e => e.preventDefault()}>
       <div className={`main-form__wrapper`}>
-        <label className={`main-form__label`}>{`Post ID`}</label>
-        <input className={`input`} type={`number`} value={id} onChange={e => onChange(e)}/>
+        <div className={`main-form__field`}>
+          <label className={`main-form__field__label`}>{`Post ID`}</label>
+          <input
+            className={`input`}
+            type={`number`}
+            value={id}
+            onChange={e => onChange(e)}
+          />
+        </div>
         <div className={`main-form__btn-wrapper`}>
           <Button onClick={onSubmit} primary>
-          {`Edit`}
-        </Button>
+            {`Edit`}
+          </Button>
         </div>
       </div>
     </form>

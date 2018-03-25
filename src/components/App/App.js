@@ -3,14 +3,29 @@ import { createPortal } from 'react-dom'
 import PropTypes from 'prop-types'
 import MainFormContainer from '../../containers/MainFormContainer'
 import Modal from '../Modal/Modal'
+import EditPostFormContainer from '../../containers/EditPostFormContainer'
+import Post from "../Post/Post";
 
-const App = ({ post: { id, title, body }, isModalActive = false, onModalCancel }) => (
+const App = ({
+  post,
+  isModalActive = false,
+  onModalCancel,
+  onEditPostFormSubmit,
+}) => (
   <main className={`top-wrapper`}>
-    <MainFormContainer id={1} />
+    <div className={`content-wrapper`}>
+      <MainFormContainer id={1} />
+      {post && (
+        <Post title={post.title} body={post.body}/>
+      )}
+    </div>
     {isModalActive &&
       createPortal(
-        <Modal title={`Editing: ${id}`} onCancel={onModalCancel}>
-          <p>testing</p>
+        <Modal title={`Editing: ${post.id}`} onCancel={onModalCancel}>
+          <EditPostFormContainer
+            post={{ title: post.title, body: post.body }}
+            onSubmit={onEditPostFormSubmit}
+          />
         </Modal>,
         document.getElementById('modal-root')
       )}
