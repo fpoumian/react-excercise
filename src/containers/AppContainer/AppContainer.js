@@ -5,11 +5,7 @@ class AppContainer extends Component {
 
   state = {
     isModalActive: false,
-    post: {
-      id: 1,
-      title: 'Lorem Ipsum',
-      body: 'Lorem Ipsum',
-    }
+    post: null
   }
 
   handleModalCancel = () => {
@@ -18,7 +14,21 @@ class AppContainer extends Component {
     })
   }
 
-  handleEditPostFormSubmit = ({title, body}) => {
+  handleMainFormSubmit = async (event, postId) => {
+    event.preventDefault()
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+    const { body, id, title } = await response.json()
+    this.setState({
+      isModalActive: true,
+      post: {
+        id,
+        title,
+        body,
+      }
+    })
+  }
+
+    handleEditPostFormSubmit = ({title, body}) => {
     this.setState({
       post: {
         ...this.state.post,
@@ -36,6 +46,7 @@ class AppContainer extends Component {
         isModalActive={isModalActive}
         onModalCancel={this.handleModalCancel}
         onEditPostFormSubmit={this.handleEditPostFormSubmit}
+        onMainFormSubmit={this.handleMainFormSubmit}
         post={post}
       />
     )

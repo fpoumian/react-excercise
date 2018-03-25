@@ -10,13 +10,13 @@ const MainForm = ({ id, onSubmit, onChange }) => (
           <label className={`main-form__field__label`}>{`Post ID`}</label>
           <input
             className={`input`}
-            type={`number`}
+            type={`text`}
             value={id}
             onChange={e => onChange(e)}
           />
         </div>
         <div className={`main-form__btn-wrapper`}>
-          <Button onClick={onSubmit} primary>
+          <Button onClick={(e) => onSubmit(e, id)} primary>
             {`Edit`}
           </Button>
         </div>

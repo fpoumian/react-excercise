@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Post = ({title, body}) => (
-  <div className={`post`}>
+  <article className={`post`}>
       <div className={`post__field`}>
         <span className={`post__field__label`}>{`Title:`}</span>
         <span className={`post__field__value`}>"{title}"</span>
@@ -11,7 +11,7 @@ const Post = ({title, body}) => (
         <span className={`post__field__label`}>{`Body:`}</span>
         <span className={`post__field__value`}>"{body}"</span>
       </div>
-  </div>
+  </article>
 )
 
 

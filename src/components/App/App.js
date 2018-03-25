@@ -11,10 +11,11 @@ const App = ({
   isModalActive = false,
   onModalCancel,
   onEditPostFormSubmit,
+  onMainFormSubmit
 }) => (
   <main className={`top-wrapper`}>
     <div className={`content-wrapper`}>
-      <MainFormContainer id={1} />
+      <MainFormContainer id={1} onSubmit={onMainFormSubmit} />
       {post && (
         <Post title={post.title} body={post.body}/>
       )}

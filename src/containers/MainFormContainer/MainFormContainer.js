@@ -6,9 +6,11 @@ class MainFormContainer extends Component {
     id: '',
   }
 
-  handleSubmit = event => {
+  handleSubmit = async (event) => {
     event.preventDefault()
-    alert(`The value is ${this.state.id}`)
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.state.id}`)
+    const result = await response.json()
+    console.log(result)
   }
 
   handleValueChange = ({ target: { value } }) => {
@@ -22,7 +24,7 @@ class MainFormContainer extends Component {
       <MainForm
         id={this.state.id}
         onChange={this.handleValueChange}
-        onSubmit={this.handleSubmit}
+        onSubmit={this.props.onSubmit}
       />
     )
   }
