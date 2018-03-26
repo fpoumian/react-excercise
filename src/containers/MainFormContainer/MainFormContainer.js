@@ -3,17 +3,11 @@ import MainForm from '../../components/MainForm'
 
 class MainFormContainer extends Component {
   state = {
-    id: '',
-  }
-
-  handleSubmit = async (event) => {
-    event.preventDefault()
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${this.state.id}`)
-    const result = await response.json()
-    console.log(result)
+    id: ''
   }
 
   handleValueChange = ({ target: { value } }) => {
+
     this.setState({
       id: value,
     })
@@ -25,6 +19,7 @@ class MainFormContainer extends Component {
         id={this.state.id}
         onChange={this.handleValueChange}
         onSubmit={this.props.onSubmit}
+        errors={this.props.errors}
       />
     )
   }

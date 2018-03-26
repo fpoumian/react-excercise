@@ -1,46 +1,90 @@
 import React, { Component } from 'react'
 import App from '../../components/App'
+// import { isPostIDValid } from "../../utils/validation.js";
+
+const isPostIDValid = value => (!isNaN(value) && value > 0)
 
 class AppContainer extends Component {
-
   state = {
     isModalActive: false,
-    post: null
+    post: null,
+    errors: {},
   }
 
   handleModalCancel = () => {
     this.setState({
-      isModalActive: false
+      isModalActive: false,
     })
   }
 
   handleMainFormSubmit = async (event, postId) => {
     event.preventDefault()
-    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-    const { body, id, title } = await response.json()
+
+    // if postID is not valid
+    // and error hasn't been added yet
+    // abort value change
+    // and add error to state
+    if (!isPostIDValid(postId)) {
+      if (this.state.errors['INVALID_POST_ID']) {
+        return
+      }
+
+      return this.setState({
+        post: null,
+        errors: {
+          INVALID_POST_ID: {
+            message: `The value you entered is not a not a valid Post ID`
+          },
+        },
+      })
+    }
+
+    // if postID is valid then fetch from API
+    // and add post to state
+    let response
+    let post
+    try {
+      response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${postId}`
+      )
+      if(response.status !== 200) {
+        throw new Error()
+      }
+      post = await response.json()
+    } catch (e) {
+      return this.setState({
+        post: null,
+        errors: {
+          RESOURCE_NOT_FOUND: {
+            message: `Unable to fetch post with ID ${postId}`
+          },
+        },
+      })
+    }
     this.setState({
       isModalActive: true,
       post: {
-        id,
-        title,
-        body,
-      }
+        id: post.id,
+        title: post.title,
+        body: post.title,
+      },
+      errors: {},
     })
   }
 
-    handleEditPostFormSubmit = ({title, body}) => {
+  handleEditPostFormSubmit = ({ title, body }) => {
     this.setState({
       post: {
         ...this.state.post,
         title,
-        body
+        body,
       },
-      isModalActive: false
+      isModalActive: false,
     })
   }
 
-    render() {
-    const { isModalActive, post } = this.state
+  render() {
+    const { isModalActive, post, errors } = this.state
     return (
       <App
         isModalActive={isModalActive}
@@ -48,6 +92,7 @@ class AppContainer extends Component {
         onEditPostFormSubmit={this.handleEditPostFormSubmit}
         onMainFormSubmit={this.handleMainFormSubmit}
         post={post}
+        errors={errors}
       />
     )
   }
