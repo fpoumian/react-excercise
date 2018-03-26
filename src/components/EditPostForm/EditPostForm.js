@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button'
 
-const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange }) => (
+const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel }) => (
   <section className={`main-form`}>
     <form onSubmit={e => e.preventDefault()}>
       <div className={`main-form__wrapper`}>
@@ -21,11 +21,15 @@ const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange }) => (
             className={`input`}
             value={body}
             onChange={e => onFieldChange(e, 'body')}
+            rows={16}
           />
         </div>
         <div className={`main-form__btn-wrapper`}>
           <Button onClick={() => onSubmit({title, body})} primary>
-            {`Edit`}
+            {`Save`}
+          </Button>
+          <Button onClick={() => onCancel()}>
+            {`Cancel`}
           </Button>
         </div>
       </div>

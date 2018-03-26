@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import App from '../../components/App'
-// import { isPostIDValid } from "../../utils/validation.js";
 
 const isPostIDValid = value => (!isNaN(value) && value > 0)
 
@@ -33,14 +32,15 @@ class AppContainer extends Component {
         post: null,
         errors: {
           INVALID_POST_ID: {
-            message: `The value you entered is not a not a valid Post ID`
+            message: `The value you entered is not a not a valid Post ID.`
           },
         },
       })
     }
 
-    // if postID is valid then fetch from API
-    // and add post to state
+    // if postID is valid then try to fetch post from APIA
+    // if post is not found then add error to state and abort
+    // otherwise add post to state and activate modal
     let response
     let post
     try {
@@ -56,7 +56,7 @@ class AppContainer extends Component {
         post: null,
         errors: {
           RESOURCE_NOT_FOUND: {
-            message: `Unable to fetch post with ID ${postId}`
+            message: `Unable to fetch post with ID ${postId}.`
           },
         },
       })
@@ -66,7 +66,7 @@ class AppContainer extends Component {
       post: {
         id: post.id,
         title: post.title,
-        body: post.title,
+        body: post.body,
       },
       errors: {},
     })

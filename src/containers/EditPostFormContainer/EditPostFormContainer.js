@@ -35,6 +35,7 @@ class EditPostFormContainer extends Component {
         form={this.state.form}
         onFieldChange={this.handleFieldChange}
         onSubmit={this.props.onSubmit}
+        onCancel={this.props.onCancel}
       />
     )
   }

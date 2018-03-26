@@ -27,6 +27,7 @@ const App = ({
           <EditPostFormContainer
             post={{ title: post.title, body: post.body }}
             onSubmit={onEditPostFormSubmit}
+            onCancel={onModalCancel}
           />
         </Modal>,
         document.getElementById('modal-root')

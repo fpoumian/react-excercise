@@ -13,6 +13,7 @@ const MainForm = ({ id, onSubmit, onChange, errors }) => (
             type={`text`}
             value={id}
             onChange={e => onChange(e)}
+            placeholder={`Enter a valid Post ID`}
           />
         </div>
         <div className={`main-form__btn-wrapper`}>
