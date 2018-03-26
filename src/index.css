@@ -74,6 +74,10 @@ code {
     background: gray;
 }
 
+.btn--default:hover {
+    background: #b9b9b9;
+}
+
 .btn--primary {
     background: #005d8b;
 }
@@ -165,8 +169,6 @@ code {
 }
 @media (min-width: 64em) {
     .edit-post-form{}
-    .edit-post-form__wrapper{
-    }
     .edit-post-form__field {
        margin-bottom: 1rem;
     }

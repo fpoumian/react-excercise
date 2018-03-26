@@ -11,6 +11,10 @@ const Post = ({title, body}) => (
         <span className={`post__field__label`}>{`Body:`}</span>
         <span className={`post__field__value`}>"{body}"</span>
       </div>
+      <div className={`post__field`}>
+        <span className={`post__field__label`}>{`Time:`}</span>
+        <span className={`post__field__value`}>{new Date().toLocaleString()}</span>
+      </div>
   </article>
 )
 
