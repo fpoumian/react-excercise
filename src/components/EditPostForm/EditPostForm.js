@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '../Button'
 
 const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel }) => (
-  <section className={`form`}>
+  <section className={`form edit-post-form`}>
     <form onSubmit={e => e.preventDefault()}>
       <div className={`form__wrapper edit-post-form__wrapper`}>
         <div className={`form__field edit-post-form__field`}>
