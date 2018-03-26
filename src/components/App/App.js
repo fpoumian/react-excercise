@@ -19,7 +19,7 @@ const App = ({
       <MainFormContainer id={1} onSubmit={onMainFormSubmit} errors={errors} />
       {post && <Post title={post.title} body={post.body} />}
     </div>
-    {isModalActive &&
+    {(isModalActive && post) &&
       createPortal(
         <Modal title={`Editing: ${post.id}`} onCancel={onModalCancel}>
           <EditPostFormContainer
