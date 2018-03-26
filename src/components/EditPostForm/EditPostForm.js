@@ -21,7 +21,7 @@ const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel
             className={`input`}
             value={body}
             onChange={e => onFieldChange(e, 'body')}
-            rows={16}
+            rows={8}
           />
         </div>
         <div className={`form__btn-wrapper`}>
