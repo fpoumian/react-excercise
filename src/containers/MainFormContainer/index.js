@@ -1,1 +1,1 @@
-export { default } from './MainFormContainer'
+export { default } from './MainFormContainer';

@@ -1,8 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Button from '../Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '../Button';
 
-const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel }) => (
+const EditPostForm = ({
+  form: { title, body },
+  onSubmit,
+  onFieldChange,
+  onCancel,
+}) => (
   <section className={`form edit-post-form`}>
     <form onSubmit={e => e.preventDefault()}>
       <div className={`form__wrapper edit-post-form__wrapper`}>
@@ -25,23 +30,21 @@ const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel
           />
         </div>
         <div className={`form__btn-wrapper`}>
-          <Button onClick={() => onSubmit({title, body})} primary>
+          <Button onClick={() => onSubmit({ title, body })} primary>
             {`Save`}
           </Button>
-          <Button onClick={() => onCancel()}>
-            {`Cancel`}
-          </Button>
+          <Button onClick={() => onCancel()}>{`Cancel`}</Button>
         </div>
       </div>
     </form>
   </section>
-)
+);
 
 EditPostForm.propTypes = {
   form: PropTypes.object,
   onSubmit: PropTypes.func,
   onFieldChange: PropTypes.func,
   onCancel: PropTypes.func,
-}
+};
 
-export default EditPostForm
+export default EditPostForm;

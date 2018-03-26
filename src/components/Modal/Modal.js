@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Modal = ({ children, title, onCancel }) => (
   <dialog className={`modal`}>
@@ -18,12 +18,12 @@ const Modal = ({ children, title, onCancel }) => (
       <div className="modal__inner-wrapper">{children}</div>
     </div>
   </dialog>
-)
+);
 
 Modal.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   onCancel: PropTypes.func,
-}
+};
 
-export default Modal
+export default Modal;

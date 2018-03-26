@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Button from '../Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '../Button';
 
-const MainForm = ({ id, onSubmit, onChange, errors={} }) => (
+const MainForm = ({ id, onSubmit, onChange, errors = {} }) => (
   <section className={`form main-form`}>
     <form onSubmit={e => e.preventDefault()}>
       <div className={`form__wrapper main-form__wrapper`}>
@@ -23,24 +23,24 @@ const MainForm = ({ id, onSubmit, onChange, errors={} }) => (
         </div>
       </div>
       {// if there are any errors in state show them
-        Object.keys(errors).length > 0 && (
-          <ul className={`error-list`}>
-            {Object.keys(errors).map((errorKey, index) => (
-              <li key={index} className={`error`}>
-                {errors[errorKey].message}
-              </li>
-            ))}
-          </ul>
-        )}
+      Object.keys(errors).length > 0 && (
+        <ul className={`error-list`}>
+          {Object.keys(errors).map((errorKey, index) => (
+            <li key={index} className={`error`}>
+              {errors[errorKey].message}
+            </li>
+          ))}
+        </ul>
+      )}
     </form>
   </section>
-)
+);
 
 MainForm.propTypes = {
   id: PropTypes.string,
   onSubmit: PropTypes.func,
   onChange: PropTypes.func,
   errors: PropTypes.object,
-}
+};
 
-export default MainForm
+export default MainForm;

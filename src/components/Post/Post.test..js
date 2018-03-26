@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Post from './Post'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Post from './Post';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<Post title={`Lorem Ipsum`} body={`Lorem Ipsum`} />, div)
-  ReactDOM.unmountComponentAtNode(div)
-})
+  const div = document.createElement('div');
+  ReactDOM.render(<Post title={`Lorem Ipsum`} body={`Lorem Ipsum`} />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});

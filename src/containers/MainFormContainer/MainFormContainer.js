@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import MainForm from '../../components/MainForm'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import MainForm from '../../components/MainForm';
 
 class MainFormContainer extends Component {
   state = {
-    id: ''
-  }
+    id: '',
+  };
 
   handleValueChange = ({ target: { value } }) => {
-
     this.setState({
       id: value,
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -22,14 +21,13 @@ class MainFormContainer extends Component {
         onSubmit={this.props.onSubmit}
         errors={this.props.errors}
       />
-    )
+    );
   }
 }
 
 MainFormContainer.propTypes = {
   onSubmit: PropTypes.func,
   onChange: PropTypes.func,
-}
+};
 
-
-export default MainFormContainer
+export default MainFormContainer;

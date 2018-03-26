@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import EditPostForm from '../../components/EditPostForm/EditPostForm'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import EditPostForm from '../../components/EditPostForm/EditPostForm';
 
 class EditPostFormContainer extends Component {
   state = {
@@ -8,18 +8,17 @@ class EditPostFormContainer extends Component {
       title: '',
       body: '',
     },
-  }
+  };
 
   componentDidMount() {
-    const { post: { title, body } } = this.props
+    const { post: { title, body } } = this.props;
     this.setState({
       form: {
         title,
         body,
       },
-    })
+    });
   }
-
 
   handleFieldChange = ({ target: { value } }, field) => {
     this.setState({
@@ -27,8 +26,8 @@ class EditPostFormContainer extends Component {
         ...this.state.form,
         [field]: value,
       },
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -38,7 +37,7 @@ class EditPostFormContainer extends Component {
         onSubmit={this.props.onSubmit}
         onCancel={this.props.onCancel}
       />
-    )
+    );
   }
 }
 
@@ -46,6 +45,6 @@ EditPostFormContainer.propTypes = {
   post: PropTypes.object,
   onSubmit: PropTypes.func,
   onCancel: PropTypes.func,
-}
+};
 
-export default EditPostFormContainer
+export default EditPostFormContainer;

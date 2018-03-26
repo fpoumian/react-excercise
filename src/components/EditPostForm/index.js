@@ -1,1 +1,1 @@
-export { default } from './EditPostForm'
+export { default } from './EditPostForm';
