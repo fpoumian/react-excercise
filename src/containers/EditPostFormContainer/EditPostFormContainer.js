@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import EditPostForm from '../../components/EditPostForm/EditPostForm'
 
 class EditPostFormContainer extends Component {
@@ -39,6 +40,12 @@ class EditPostFormContainer extends Component {
       />
     )
   }
+}
+
+EditPostFormContainer.propTypes = {
+  post: PropTypes.object,
+  onSubmit: PropTypes.func,
+  onCancel: PropTypes.func,
 }
 
 export default EditPostFormContainer

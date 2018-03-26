@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Button'
 
-const MainForm = ({ id, onSubmit, onChange, errors }) => (
+const MainForm = ({ id, onSubmit, onChange, errors={} }) => (
   <section className={`form main-form`}>
     <form onSubmit={e => e.preventDefault()}>
       <div className={`form__wrapper main-form__wrapper`}>
@@ -40,6 +40,7 @@ MainForm.propTypes = {
   id: PropTypes.string,
   onSubmit: PropTypes.func,
   onChange: PropTypes.func,
+  errors: PropTypes.object,
 }
 
 export default MainForm

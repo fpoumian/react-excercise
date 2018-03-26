@@ -38,9 +38,10 @@ const EditPostForm = ({ form: { title, body }, onSubmit, onFieldChange, onCancel
 )
 
 EditPostForm.propTypes = {
-  id: PropTypes.string,
+  form: PropTypes.object,
   onSubmit: PropTypes.func,
-  onTitleChange: PropTypes.func,
+  onFieldChange: PropTypes.func,
+  onCancel: PropTypes.func,
 }
 
 export default EditPostForm

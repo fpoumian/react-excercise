@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import MainForm from '../../components/MainForm'
 
 class MainFormContainer extends Component {
@@ -24,5 +25,11 @@ class MainFormContainer extends Component {
     )
   }
 }
+
+MainFormContainer.propTypes = {
+  onSubmit: PropTypes.func,
+  onChange: PropTypes.func,
+}
+
 
 export default MainFormContainer

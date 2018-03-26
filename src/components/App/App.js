@@ -12,7 +12,7 @@ const App = ({
   onModalCancel,
   onEditPostFormSubmit,
   onMainFormSubmit,
-  errors
+  errors = {}
 }) => (
   <main className={`top-wrapper`}>
     <div className={`content-wrapper`}>
@@ -42,6 +42,10 @@ App.propTypes = {
     body: PropTypes.string,
   }),
   isModalActive: PropTypes.bool,
+  onModalCancel: PropTypes.func,
+  onEditPostFormSubmit:PropTypes.func,
+  onMainFormSubmit:PropTypes.func,
+  errors: PropTypes.object,
 }
 
 export default App
