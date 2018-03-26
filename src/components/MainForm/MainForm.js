@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Button from '../Button'
 
 const MainForm = ({ id, onSubmit, onChange, errors }) => (
-  <section className={`main-form`}>
+  <section className={`form main-form`}>
     <form onSubmit={e => e.preventDefault()}>
-      <div className={`main-form__wrapper`}>
-        <div className={`main-form__field`}>
-          <label className={`main-form__field__label`}>{`Post ID`}</label>
+      <div className={`form__wrapper main-form__wrapper`}>
+        <div className={`form__field`}>
+          <label className={`form__field__label`}>{`Post ID`}</label>
           <input
             className={`input`}
             type={`text`}
@@ -16,12 +16,13 @@ const MainForm = ({ id, onSubmit, onChange, errors }) => (
             placeholder={`Enter a valid Post ID`}
           />
         </div>
-        <div className={`main-form__btn-wrapper`}>
+        <div className={`form__btn-wrapper`}>
           <Button onClick={e => onSubmit(e, id)} primary>
             {`Edit`}
           </Button>
         </div>
-        {// if there are any errors in state show them
+      </div>
+      {// if there are any errors in state show them
         Object.keys(errors).length > 0 && (
           <ul className={`error-list`}>
             {Object.keys(errors).map((errorKey, index) => (
@@ -31,7 +32,6 @@ const MainForm = ({ id, onSubmit, onChange, errors }) => (
             ))}
           </ul>
         )}
-      </div>
     </form>
   </section>
 )

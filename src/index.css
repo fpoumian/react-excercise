@@ -81,64 +81,92 @@ code {
 
 
 /**
-* Main Form
+* Form
 */
 
-.main-form {
+.form {
     width: auto;
 }
 
-.main-form__wrapper {
+.form__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 
-.main-form__field {
+.form__field {
     display: block;
     margin-bottom: 1rem;
 }
 
-.main-form__field__label {
+.form__field__label {
     margin-bottom: 1rem;
     text-align: center;
     display: block;
 }
 
-.main-form__btn-wrapper {
+.form__btn-wrapper {
     display: flex;
     justify-content: center;
 }
 
 /** Laptop and Desktop */
 @media (min-width: 64em) {
-    .main-form {
+    .form {
         width: 100%;
     }
 
-    .main-form__wrapper {
-        flex-direction: row;
-        height: auto;
-    }
-
-    .main-form__field {
+    .form__field {
         display: flex;
         align-items: center;
         margin-bottom: 0;
     }
 
-    .main-form__btn-wrapper {
+    .form__btn-wrapper {
         display: flex;
         align-items: center;
     }
 
-    .main-form__field__label {
+    .form__field__label {
         margin-right: 2rem;
         margin-bottom: 0;
         display: flex;
     }
 }
+
+/**
+* Main Form
+*/
+
+.main-form{}
+@media (min-width: 64em) {
+    .main-form{}
+    .main-form__wrapper {
+        flex-direction: row;
+        height: auto;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/**
+* Edit Post Form
+*/
+.edit-post-form{}
+.edit-post-form__wrapper {
+    align-items: normal;
+    width: 75%;
+    margin: 0 auto;
+}
+@media (min-width: 64em) {
+    .edit-post-form{}
+    .edit-post-form__field {
+       margin-bottom: 1rem;
+    }
+}
+
+
+
 
 /**
 * Post
@@ -181,6 +209,8 @@ margin-bottom: 1.5rem;
     width: 80%;
     max-width: 500px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal__inner-wrapper {
@@ -188,6 +218,7 @@ margin-bottom: 1.5rem;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    height: 100%;
 }
 
 .modal__top-bar {
